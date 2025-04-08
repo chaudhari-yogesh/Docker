@@ -1,6 +1,6 @@
 # Docker Commands
 
-#### To list the docker images
+### To list the docker images
 ```
 docker images
      OR
