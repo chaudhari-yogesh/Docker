@@ -1,0 +1,23 @@
+Docker Networks:
+
+    CASE I: If we have two seperate containers one is for django app and another is for mysql database 
+            now we can not able to connect those containers because they can not communicate with each other
+            so for that we need to create one network and add "--network < networkName>" this flag while running
+            those containers seperatly and also do one change just replace container name with MY_SQL_HOST="Conainer_Name"
+
+            eg. docker run < imgName> --network < netName> / 
+    
+    But if we use docker-compose it will create network automatically
+    
+    Types of Networks:
+        1. Host
+        2. Bridge (Default)
+        3. User Defined Bridge (Custom)
+        4. None
+
+        5. MACVLAN (docker swarm)
+        6. IPVLAN (docker swarm)
+        7. Overlay (docker swarm)
+
+
+
