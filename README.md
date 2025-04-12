@@ -6,11 +6,22 @@ docker logs < containerName>
 
 docker inspect < containerName>
 ``` 
-### To list the docker images
+# Docker Images
 ```
-docker images
-     OR
-docker image ls
+# To list docker images
+docker images / docker image ls
+
+# To remove images
+docker rmi < imgName>
+
+# To Rename docker image
+docker image tag < imgName>
+
+# To get the id's of all images
+docker images -aq
+
+# To remove all docker images
+docker rmi -f $(docker images -aq)
 ```
 
 ### To pull the docker image from DockerHub
@@ -50,7 +61,7 @@ docker build -t < imgName > .
 docker exec -it < containerName> bash 
 ```
 
-## Docker Network
+# Docker Network
 
 ### To list the all available networks
 ```
@@ -67,4 +78,59 @@ docker network create mynet -d Bridge
 ### To inspect the docker network
 ```
  docker network inspect < networkName>
+```
+
+# Docker Volumes and Storage
+
+```
+# To list docker volumes
+docker volume ls
+
+# To create docker volume
+docker volume create < volName>
+
+# To see more details
+docker volume inspect < volName>
+```
+
+# Docker Compose
+
+```
+# To run docker containers
+docker compose up
+
+# To build docker containers
+docker compose up --build
+
+# To down docker containers
+docker compose down
+
+-d = for detached mode
+
+# To Remove all unused volumes, images, networks, containers
+docker system prune
+```
+
+# DockerHub
+
+```
+# To login 
+docker login
+
+# To push docker image
+docker push < imgName>
+```
+
+# Docker Scout
+```
+# To check vulnerabilities
+docker scout quickview < imgName>
+
+# To scan common vulnerabilities
+docker scout cves < imgName>
+```
+
+# Docker init
+```
+docker init
 ```

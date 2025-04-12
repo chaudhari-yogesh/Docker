@@ -1,4 +1,4 @@
-Docker Networks:
+# Docker Networks:
 
     CASE I: If we have two seperate containers one is for django app and another is for mysql database 
             now we can not able to connect those containers because they can not communicate with each other
@@ -20,4 +20,35 @@ Docker Networks:
         7. Overlay (docker swarm)
 
 
+# Docker Volumes and Storage
 
+1. Named Volume: We create a volume and then mount it with conatainer
+
+    -v volumeName: /var/lib/mysql == Now you can mount volume with container while runnig container 
+    we can just add the above flag with docker run cmd
+
+2. Path Volume: We create a folder and just mount it's path with container
+
+    -v /home/ubuntu/my_folder/: /var/lib/mysql == Now you will get all data backup inside given folder
+
+So the above two ways to mount docker volumes with container
+
+# Docker Compose
+
+We can create and manage multiple container with single config file
+
+# Multi stage docker build
+
+Generally, in docker file we used base image eg. we use python 3.8 base img to build the app but it is not usefull
+to run the application it is just usefull to install (requiremts.txt) packages so what we do, we slim base image
+to run the project
+
+# Docker Scout
+
+It is tool which will scan images and check vulnerabilities of that image, this tool is available inside docker 
+desktop
+
+# Docker init
+
+It will create DockerFile docker-compose README.Docker.md for us answering simple questions
+ 
